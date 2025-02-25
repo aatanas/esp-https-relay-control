@@ -25,6 +25,10 @@ const char password[] = "";
 // Create a list of certificates with the server certificate
 X509List cert(my_cert);
 
+WiFiClientSecure client;
+uint8_t relay_st;
+HTTPClient https;
+
 void setup() {
 
 	pinMode(RELAY_PIN, OUTPUT);
@@ -46,18 +50,13 @@ void setup() {
 		delay(500);
 		now = time(nullptr);
 	}
+	client.setTrustAnchors(&cert);
 }
 
 void loop() {
-	WiFiClientSecure client;
-	static uint8_t relay_st;
 
 	// wait for WiFi connection
 	if ((WiFi.status() == WL_CONNECTED)) {
-
-		client.setTrustAnchors(&cert);
-
-		HTTPClient https;
 
 		time_t now = time(nullptr);
 		struct tm timeinfo;
