@@ -1,4 +1,4 @@
-// Aleksandar Atanasovski
+
 <?php
 // GET request handling
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
