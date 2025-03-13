@@ -1,7 +1,7 @@
 # ESP HTTPS Relay Control
 Very simple encrypted relay control over the internet using ESP microcontroller. 
 
-Its only using HTTP reponse codes for maximum efficency.  
+Its only using HTTP reponse codes for maximum efficiency.  
 
 Automatic On / Off times can be scheduled.
 
